@@ -12,6 +12,12 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
+      - name: Install Sass
+        run: npm install sass
+
+      - name: Compile Sass
+        run: npx sass static-html/sass/style.sass static-html/css/style.css
+
       - uses: akhileshns/heroku-deploy@v3.0.5
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
