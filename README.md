@@ -1,26 +1,20 @@
-# heroku-docker-nginx-example
+# Docker Actions Heroku Deploy
 
-Barebones example of deploying
-[the official nginx Docker image](https://github.com/docker-library/docs/tree/master/nginx)
-to Heroku. Serves an example html file at the root directory.
+A simple example to show the deploy of a Docker Nginx Container to Heroku using Github Actions.
 
-## Try it now!
+Demo: [https://gcs-docker-githubactions.herokuapp.com/](https://gcs-docker-githubactions.herokuapp.com/)
 
-Fire up an nginx proxy on [Heroku](https://www.heroku.com/) with a single click:
+# Context
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+The repo was made by [oliveirafilipe](https://www.linkedin.com/in/oliveirafilipe/) to be shown in 
+Software Configuration Management class in Bachelor of Software Engineering at [PUCRS](http://www.pucrs.br/en/). 
 
-## Manual deployment
+# _Standing on the shoulders of giants_
+## [rjoonas/heroku-docker-nginx-example](https://github.com/rjoonas/heroku-docker-nginx-example)
+Template for this repository. Provided basic configuration for Nginx and Docker.
 
-You will need to create a Heroku account and install the Heroku CLI, eg.
-`brew install heroku`.
+## [Hackinet/fidget-spinner](https://github.com/Hackinet/fidget-spinner)
+Provided a fun static website that contains an interactive fidget spinner to be served with Nginx.
 
-```
-git clone git@github.com:rjoonas/heroku-docker-nginx-example.git
-cd heroku-docker-nginx-example
-heroku container:login
-heroku create
-heroku container:push web
-heroku container:release web
-heroku open
-```
+## [AkhileshNS/heroku-deploy](https://github.com/AkhileshNS/heroku-deploy)
+Provided a simple to use Github Action allowing deploy to Heroku.
