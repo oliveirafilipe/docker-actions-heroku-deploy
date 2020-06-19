@@ -23,38 +23,35 @@ function verifyorder() {
 }
 
 
-canvas.addEventListener('mousedown', function (_ref) {
-  var clientX = _ref.clientX;
-  var clientY = _ref.clientY;
+canvas.addEventListener('mousedown', function (event) {
+  var clientX = event.clientX;
+  var clientY = event.clientY;
 
   dragStart = { clientX: clientX, clientY: clientY };
 });
-canvas.addEventListener('touchstart', function (_ref2) {
-  var originalEvent = _ref2.originalEvent;
-
+canvas.addEventListener('touchstart', function (event) {
   dragStart = {
-    clientX: originalEvent.touches[0].pageX,
-    clientY: originalEvent.touches[0].pageY
+    clientX: event.touches[0].pageX,
+    clientY: event.touches[0].pageY
   };
 });
-canvas.addEventListener('mousemove', function (_ref3) {
-  var clientX = _ref3.clientX;
-  var clientY = _ref3.clientY;
+canvas.addEventListener('mousemove', function (event) {
+  var clientX = event.clientX;
+  var clientY = event.clientY;
   return dragStart && function () {
     updateSpeed(dragStart, { clientX: clientX, clientY: clientY });
     dragStart = { clientX: clientX, clientY: clientY };
   }();
 });
-canvas.addEventListener('touchmove', function (_ref4) {
-  var originalEvent = _ref4.originalEvent;
+canvas.addEventListener('touchmove', function (event) {
   return dragStart && function () {
     updateSpeed(dragStart, {
-      clientX: originalEvent.touches[0].pageX,
-      clientY: originalEvent.touches[0].pageY
+      clientX: event.touches[0].pageX,
+      clientY: event.touches[0].pageY
     });
     dragStart = {
-      clientX: originalEvent.touches[0].pageX,
-      clientY: originalEvent.touches[0].pageY
+      clientX: event.touches[0].pageX,
+      clientY: event.touches[0].pageY
     };
   }();
 });
